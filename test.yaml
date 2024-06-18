@@ -1,5 +1,5 @@
 proxies:
-  - {name: 233boy-ws-woaihuawei.xyz, server: woaihuawei.xyz, port: 29061, type: vmess, uuid: 9d4f2c43-eacc-4b04-bf18-65f2ad2996ae, alterId: 0, cipher: auto, tls: true, network: ws, ws-opts: {path: /9d4f2c43-eacc-4b04-bf18-65f2ad2996ae, headers: {Host: woaihuawei.xyz}}}
+  - {name: 233boy-ws-woaihuawei.xyz, server: woaihuawei.xyz, port: 28919, type: vmess, uuid: 9d4f2c43-eacc-4b04-bf18-65f2ad2996ae, alterId: 0, cipher: auto, tls: true, network: ws, ws-opts: {path: /9d4f2c43-eacc-4b04-bf18-65f2ad2996ae, headers: {Host: woaihuawei.xyz}}}
 
 proxy-groups:
   - name: "PROXY"
