@@ -1,0 +1,26 @@
+proxies:
+  - name: "233boy-ws-woaihuawei.xyz"
+	server: woaihuawei.xyz
+	port: 28919
+	type: vmess
+	uuid: 9d4f2c43-eacc-4b04-bf18-65f2ad2996ae
+	alterId: 0
+	cipher: autotls: true
+	network: ws
+	ws-opts: 
+		path: /9d4f2c43-eacc-4b04-bf18-65f2ad2996ae
+		headers:
+			host: woaihuawei.xyz
+
+proxy-groups:
+  - name: "ProxyGroup"
+    type: select
+    proxies:
+      - "233boy-ws-woaihuawei.xyz"
+
+rules:
+  - DOMAIN-SUFFIX,google.com,ProxyGroup
+  - DOMAIN-SUFFIX,youtube.com,ProxyGroup
+  - DOMAIN-KEYWORD,facebook,ProxyGroup
+  - GEOIP,CN,DIRECT
+  - MATCH,ProxyGroup
