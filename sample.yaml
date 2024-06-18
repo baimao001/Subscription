@@ -1,0 +1,29 @@
+proxies:
+  - name: "Proxy1"
+    type: ss
+    server: server1.example.com
+    port: 8433
+    cipher: aes-256-cfb
+    password: "password1"
+  - name: "Proxy2"
+    type: vmess
+    server: server2.example.com
+    port: 443
+    uuid: "cb85cc6b-8d7d-4d99-9e22-6675956b889c"
+    alterId: 0
+    cipher: auto
+    tls: false
+
+proxy-groups:
+  - name: "ProxyGroup"
+    type: select
+    proxies:
+      - "Proxy1"
+      - "Proxy2"
+
+rules:
+  - DOMAIN-SUFFIX,google.com,ProxyGroup
+  - DOMAIN-SUFFIX,youtube.com,ProxyGroup
+  - DOMAIN-KEYWORD,facebook,ProxyGroup
+  - GEOIP,CN,DIRECT
+  - MATCH,ProxyGroup
